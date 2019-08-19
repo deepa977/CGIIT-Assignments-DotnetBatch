@@ -1,0 +1,66 @@
+Lambda Expressions
+=>
+Inbuilt extension methods to retreive data
+We apply filters using lambda expression
+
+int []arr={12,0,9,7,5,3,2,-1,4};
+foreach(var a in arr)
+{
+if(a > 5)
+C.WL(a);
+}
+
+foreach(var a in arr.Where(x=>x>5))
+  C.WL(a);
+
+Lambda expression can be used to retreive data from Arrays, Collection and DB
+
+Condition given inside the extension methods is called predicate
+variables declared for a predicate has the condition scope
+variables are not declared initially and created as an expression
+x=>condition
+
+Dept - IT, Accounts,HR
+Desg- Manager, Analyst, Clerk
+
+SingleOrDefault - result will be EmployeeInfo
+
+Multiple values
+Result will be List<EmployeeInfo>
+
+
+Examples on Arr and Collection 
+------------------------------------------------------------------------------
+Linq Queries
+
+Language Integrated Query
+query language    lambda - expression Language
+                                  extension methods to give condition
+
+linq uses clauses to give the query
+
+sql - select
+         from
+         where 
+
+
+linq - from 
+          where 
+           select
+
+LINQ to - collection 
+LINQ to DB
+
+
+
+
+
+
+
+
+
+
+
+
+
+

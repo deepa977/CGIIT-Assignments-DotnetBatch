@@ -1,0 +1,390 @@
+ASP.NET
+Active Server Pages . NET
+Client Side / Server Side
+Client Side  - Browser
+Make Request to web page
+It will execute JavaScript / HTML
+
+Server Side - Webserver and DB
+ASP.NET the WebServer used to host the web application is IIS
+Internet Information Server
+
+Web Engine in Web Server accepts the request from client , Process the Web page as per the request and converts the output into HTML page and sends the response to the browser
+Browser can understand only HTML
+
+Web Pages works on the Request - Response which are the Inbuilt Objects
+Request - Response http pairs
+
+--------------------------------------------------------------
+
+IISExpress - .net framework installation
+IIS7.0 - Windows OS
+
+ASP.NET is not a new language
+C# features are used in ASP.NET to develop Web Application
+
+1. ASP.NEt controls to design the web pages
+ASP.NET Server controls-Design the Web Page
+- HTML Controls
+- ASP.NET Server Side Controls - Similar to Windows Form Control.These Controls have more property compared to HTML Controls. They are more peferred when designing the web page
+  Data Controls - Data Binding
+Validation Controls - used to perform JavaScript Validation
+Site Controls - Navigate from one web page to another
+
+All the ASP.NET Controls are converted to HTML controls by the Web Engine and sent as response
+
+
+WEb pages had to be created using
+ HTML + Javascript+ C# 
+for server side interaction if we are using only HTML Controls
+
+
+ASP.NET server side controls (drag and drop)
+Like WPF they are represented as Tags
+<asp:Button Id="btnSubmit" runat="server"/>
+<asp:TextBox ID="" runat="Server"/>
+<asp:Label Id="" runat="server"/>
+
+Web page using ASP.NET +C#
+
+WinFORM - Form1.s(Designer), Form1.Designer.cs, Form1.cs, Form1.resx
+
+WPF - Windows.xaml , Windows.xaml.cs
+
+Asp.NET - Webpages - WebForm.aspx - Design pages
+                   WebForm.aspx.cs - Code Page (Events and write the Code in C#)
+
+Validation Controls
+RequiredFieldValidator -this will check for blank values
+RangeValidator- if data entered is in specific range
+RegularExpressionValidator- format like url, email etc
+Compare Validator- compare between 2 controls value
+Eg:Set Password
+Retype Password to Confirm
+ValidationSummary -show summary of validation error on submit button
+Custom Validator- create user defined validations Eg:validation for entering name in Upper Case
+
+Except Custom Validator  (logic in C# Code) rest all converts into JavaScript. It executes at browser level
+
+We need to set 2 properties for all validators
+1. ControlToValidate
+2. Error Message
+
+Rule 
+1 Control can have more than 1 type of Validator
+1 Validator - validates against - 1 control
+These validators cannot do validation on RadioButton and CheckBox
+
+------------------------------------------------------------------------------
+
+<appSettings>
+    <add key="ValidationSettings:UnobtrusiveValidationMode" value="None"></add>
+  </appSettings>
+
+This settings is given in web.config file
+It is required for ASP.NET application to enable JavaScript execution
+By default from VS2012 onwards Javascript execution is disabled
+-----------------------------------
+
+Saturday topics
+
+Master Pages defines common content which can be used across all web pages. Common logo,header,footer, menus
+master pages are files with .master extension
+they are referred inside the .aspx page
+master pages can be nested
+
+A web page has a common logo , common menus , common background, uniform font style and size
+
+Skin Themes 
+common background, uniform font style and size is defined in skin file
+
+Skins/css are inside the APP_Themes folder.
+skin files have .skin as extension
+Skin is used to define styles for asp.net controls
+css is used to define styles for HTML controls
+
+
+themes folder content and master pages are referred by .aspx web pages
+ <asp:ContentPlaceHolder>
+This is the place in which the contents of the other web pages(.aspx)will get displayed
+So nothing should be placed inside the  <asp:ContentPlaceHolder> tag when creating master pages
+
+1. Select WebForm Master Page
+2. Design the content of master page outside <asp:ContentPlaceHolder> tag
+3. Add WebForm with master and choose the master page for the web form
+4. Design the content of webforms inside ContentPlaceHolder
+
+
+
+<asp:Label ID="Label1" runat="server" Text="Label" BackColor="#FF66CC" BorderColor="#000099" BorderStyle="Solid" BorderWidth="3px" ForeColor="#336600"></asp:Label>
+
+2 types of skin files
+
+Default Skin will apply style for all the controls in the web form
+
+
+Named Skin can apply style for specific controls only
+It is applied using SKINID property
+
+<%@    --- %> - directives
+Every web page has a page directive which says the attributes for the current web page
+
+
+StateManagement in ASP.NET
+How to transfer data across web pages
+
+Client Side State Management  
+
+Query String - transfer data from one web page to another as a part of URL
+format  used to transfer data : URL?Data
+
+ Drawbacks of query string
+URL of web page is visible on the address bar of browser
+The data transferred is also visible on the address bar of the browser
+Hence it is not secured
+
+Call one web page to another 
+Response.Redirect("url")
+Mutltiple values passed in QueryString is seperated by &
+
+Browser to server getting data. It is request object
+Cookies is similar to HTML5 offline storage
+It will save data on client side for future retreival
+
+Cookies requires server side programming language like asp.net or jsp or servlets
+Offline Storage needs Javascript
+
+Cookies - Read Cookie to get the data
+Write Cookie to store the data
+
+Tuesday 13/8
+Server Side State Management
+Session 
+1.Session means the time between login and logout from a web application is called a session
+It is called as a user session and it is created for every instance of browser connecting to web server
+2. Every user connecting to the webserver is identified by a 32 bit long string ID called sessionID
+Thru the sessionID the request / Response happens between the browser and web server
+3. Web server does not keep track of any broswer information like IPAddress, Location etc
+It is because HTTP is a stateless protocol
+Session ID exist till the user logout
+4. Session variables to transfer data across web pages
+Session variables are secured compared to query string
+5. Session.Abandon() - logout of a Session
+6. Session.Timeout - kill the idle session
+default timeout is 20 Minutes
+Session.Timeout=2;
+
+5.Global.asax which is common for all the webpages
+It has 2 events related to session
+Session_Start() - will be executed for every user new session
+
+Session_End()- When user logout it will execute this event
+user related clean up job is written in Session_End
+Application - related to entire project
+Application Variable
+2 events related to application
+Application_Start()- hosting the web application on the web server and it is invoked for 1st time
+Application_End()- web application is shut down for maintenance or web server has crashed
+
+Property of web server is it does not keep track of browser information
+Global.asax events
+
+Friday 16/8
+Caching 
+retreiving the web pages from cache memory instead of actual Web Server
+Page Caching - taken by the history of web broswer
+Data Caching- Works with the Database data
+- get data from actualDB
+- get data from the cache memory
+
+Absolute Expiry- Fixed time
+Sliding Expiry - varying time or it may not happen itself
+Cache Dependency- dependent on external storage
+
+Expiry means How frequently the cache memory should get updated with DB data
+
+1st user - requesting data from DB
+data is fetched from DB and one response is sent to 1st user and another to cache memory
+
+2nd user request onwards - get data from cache memory
+expiry - 2 minutes
+1st user- 12:00
+till 12:02 all user will get data from cache
+12:02:35 - DB
+
+
+Sliding Expiry - 12:00 1st user has made a request
+expiry is set to 2 minutes
+12:01 - expiry - 12:03
+12:02:35 - expiry 12:04:35
+12:3:59 - 
+
+Cache Dependency - dependent on db table
+if insert,update or delete happens on the Database then cache gets updated
+
+Output Caching
+POstBack - sending data from browser to web server
+
+Enable AutoPostback - the data selected in combo box should be posted automatically to the server
+
+
+Tracing
+is used by support people
+It is used to track the problems occuring in the web page
+There are 2 ways to enable tracing
+Page Level Tracing - web page specific
+Application Level Tracing - Entire Web Application
+
+<Trace="true">
+
+DataBinding controls
+ComboBox
+DataGridView
+ListBox
+
+ASP.NET has additional controls for Data Binding
+DataGridView in winform is GridView in ASP.NET
+DataList
+FormView 
+Repeater
+DropDownList
+ListBox
+DetailsView
+They are used to display data from DataSet to these controls
+2 imp examples which is required in project
+
+Repeater is a control which does not have any inbuilt template
+Web Developer have to tell how to display the content 
+by choosing  ItemTemplate
+
+1st Imp Example DataBinding between DropDownList and GridView thru  wizard (0 coding)
+
+2nd Imp Example Similar to Shopping Cart
+customizing the gridview
+
+
+Authentication and Authorization
+Authentication - checking credentials (username & password is correct or not)
+Authorization - permission 
+allow
+deny
+
+Authentication - Windows Authentication(Default)
+windows user name and password is used to access the webpages
+If u login to windows successfully u can access any web pages
+it will not ask for credentails again
+
+
+Forms Authentication
+First the Login Page is loaded 
+Only if login is successful it allows to access other web pages
+
+authorized user - user name and password should get access
+guest user / anonymous user should be denied access
+
+<allow users="*"/>
+<deny users="*"/>
+<allow users="Tom,Sam,Martin"/>
+<allow roles="Accounts,IT"/>
+<deny roles="HR,Admin"/>
+<deny users="Blake, Ford"/>
+<deny users="?"/> deny guest access
+--------------------------------------------------------------------------
+Entity Framework
+
+
+ASP.NET AJAX
+Asynchronous Java Script and XML
+default property of any web page is it loads the entire page even though a few data in the page is modified
+
+AJAX allows partial post back
+
+AJAX works on 4 inbuilt ASP.NET Controls
+
+ScriptManager 
+This will generate the required java script for partial post back of data
+1 webpage can have 1 script manager only
+ScriptManagerProxy
+if master pages has already implemented Script Manager, then content pages(aspx page which referes master page) will implement scriptmanagerproxy
+to use the AJAX functionality
+
+UpdatePanel
+to enable partial postback ,controls has to be placed inside update panel
+there can be any number of update panel in a web page
+update panel can be nested also
+
+UpdateProgress
+it will help us to give some pause time for the web page to get loaded fully
+The client can get a status message till it loads the web page
+
+
+Timer
+is used to reload the contents of the web pages automatically after a time period set in timer
+- dynamic time on web page
+- cricket scores
+stock market rates
+
+ViewState
+is used to transfer data across page post back
+
+int num1=0;
+
+Button1               Button2
+Click	             click
+num1++;                num1++;
+
+
+Label1.Text=num1;
+
+Session["var"] - transfer data across multiple web pages till the user logout
+Application["var"]- when different session user wants to access project related data 
+ViewState["var"] - hold data between page post back
+======================================
+Web Services & WCF & WebAPI - categorized under SOA Service Oriented Architecture.
+
+Web Services is at a basic level - request is HTTP and Response is SOAP
+
+WCF - Windows Communication Foundation
+superset of Webservices
+Request - Http, TCP, NamedPipe(IPC),MSMQ
+Response - SOAP
+
+
+WebAPI - Restful Service
+they can work on any component/OS(tab, mac,win os,pc,smartphone, apple phones)
+Request - http
+Response - JSON/XML
+XML Example
+<UserInfo>
+<username>guest</username>
+<password>pwd</password>
+</UserInfo>
+
+Java script object notation data is processed as key/value pair
+
+Eg:
+{"username":"guest",
+  "password":"pwd"
+}
+
+
+
+
+
+
+============================================
+ 
+WCF 
+20/8
+Wed & Thur (ASP.NET Project)21/8 and 22/8
+
+Fri ,Sat, Mon ( Asp.net mvc) 23/8,24/8,26/8
+
+Tues - WebAPI 27/8
+
+Wed , Thur (Final Project) 28/8, 29/8
+
+
+
+
+

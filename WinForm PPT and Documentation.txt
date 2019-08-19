@@ -1,0 +1,9 @@
+PPTs 
+1. Introduction to Project - Project Name and Group Members
+2. Project description - 3 to 4 points
+3. DB Tables
+4. Project Flow - explain the functionalities (3 or 4 slides)
+5. Future Enhancement
+
+Documentation - (Flow Diagram and Project Description) Hardcopy
+

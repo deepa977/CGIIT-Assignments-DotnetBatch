@@ -1,0 +1,38 @@
+Windows Form Programming
+is used to build GUI based Desktop application using C#
+Form is the container in which all component will be placed
+All controls are drag and drop
+2 property is common for all controls
+1. Name - identify the control
+2.Text - Set/Get values from the control
+
+Common Controls
+1. Label - Description Text
+2.TextBox- used to take Single Line Input/ Multiple Line Input/ Password Field
+3.RadioButton - to group all radio button to enable single selection - put all radiobutton inside a GroupBox
+4.CheckBox
+5.CheckBoxList - CheckBox + ListBox
+6. ComboBox - Single Selection
+7. ListBox - Multiple Selection
+8.Button - Click Operations
+9. Menus-  Create project related menus
+10. ToolTip- Will Give help information
+11. Error Provider - handle errors
+
+1.Handle Winform errors
+2. Tooltip (help information)
+3. Invoke one win form from another 
+ModelDialog - form2 action should be performed to return to Form1
+ShowDialog() - call this function
+Modeless Dialog
+Swap between Form1 and Form2 without performing any action
+Show() - call this Function
+MessageBox.show() is by default Modal Dialog
+
+4. Transfer data from one windows form to another
+---------------------------------------------------------------------------------
+
+
+
+
+

@@ -1,0 +1,151 @@
+(localdb)\MSSQLLocalDB
+
+SqlServer Database
+is used to store data
+
+SQL Server follows a language called SQL (structured query langauage) which is used to write queries
+
+5 types of queries written in SQL
+1. DDL - Data Definition Language - structure of data
+create , alter, drop
+2.DML- Data Manipulation Language - works on data
+insert , update , delete
+3.DQL- Data Query Language - Data Retreival
+select
+4.TCL - Transaction Control Language
+commit - save changes 
+rollback - undo save
+5.DCL - Data Control Language - create user and give permission to them
+grant - assign permission
+revoke - remove permission
+--------------------------------------------------------------------------
+
+DDL  
+DB- tables , stored procedures , views,functions
+DB entities
+
+Table consist of Rows and Columns
+Rows- Data
+Columns - type of data that can be given for the row
+
+Employee - Table
+EmpID , Name, Dept, Desg, Salary - Columns
+Sql Datatypes
+C#                       Sql Types
+short                    smallint
+int                          int
+long                      bigint
+char                      char, varchar, nvarchar
+string                    char(6), varchar(6), nvarchar(6)
+  
+gender char(6)  - male, female
+assign 6 spaces of memory 
+maleXX
+varchar(6)
+male - assign space for 4 characters
+nvarchar is used for multiple languages
+
+DateTime                  datetime
+boolean                     bit
+(true/false)                  (0/1)
+byte []                          varbinary
+(images(.gif/.jpeg), mp3, mp4)
+string                           text
+.pdf, .doc 
+float                                number(9,2) - 7 real.2 decimal
+double                            decimal(18,0)
+decimal                            money
+
+
+
+create table Employee
+(Empid int,
+Name varchar(20),
+Dept varchar(20),
+Desg varchar(20),
+salary money)
+every entity in sql server begins with dbo which means database object
+
+dbo.employee
+
+---------------------------------------------------
+1. We need to change the table name - rename the table
+2. We need to change column name - rename the column
+3. Add a column
+4. Drop a column
+5. Change the datatype of a column
+rename a table or column there is an inbuilt stored procedure called sp_rename
+
+table is made of constraints
+Constraints are rules for a column
+They tell the restriction type of data that can be given to the column
+
+primary key  - unique not null values
+only column in a table can be primary key
+if combination of columns is made as primary key , then it is called as composite key or candidate key
+
+unique - data is unique + null value for 1 data
+null - no data is accepted. default is [name varchar(50)] it is null by default
+not null - data has to entered . it cannot be empty (null)
+default - assign a default value for a column . If no value is entered it will consider the default value
+Eg : DOJ datetime default GetDate()
+         address varchar(100) default 'Bangalore'
+check - will specify the range of value or valid values to be entered for a column
+gender varchar(6) check gender in('M','F','Male','Female')
+salary money check salary between 10000 and 50000
+identity - it is used along with PK column on int datatype
+It will auto increment the numbers (sequentially)and generate it automatically
+empid int primary key identity(10,1)
+1st value is 10 and increment by 1
+identity(100,100)
+identity -  default is 1,1
+foreign key - is used to create relation ship between tables
+primary key in Table A can be used as Foreign Key in Table B
+FK can be null
+Course Info 
+
+CourseID - PK , CourseName - Not Null
+  1                         Dotnet
+   2                         Java
+3                           Python
+
+StudentInfo
+StudId - PK  Name   CourseId  (FK)
+100 	    Blake       300 (invalid because in CourseInfo table there is no CourseID as 300)
+200                 Clark         1 (Valid)
+
+300                  King          null
+
+
+1. create table with constraints
+2. create table without  constraint and  alter table to add constraint
+	
+--------------------------------------------------
+
+DML  - insert , update and delete
+
+
+ALTER TABLE EmployeeInfo
+alter column Empname Varchar(50) not null;
+
+ALTER TABLE Tasks  
+    ADD CONSTRAINT taskdesc_default  
+    DEFAULT 'TBA' FOR TaskDescription;  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

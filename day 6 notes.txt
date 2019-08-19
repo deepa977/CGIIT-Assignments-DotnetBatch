@@ -1,0 +1,214 @@
+Presentation Topics C#
+1. .NET Framework Architecture Components - Prince
+2.C# Basics , Datatypes,Conversion Functions and Arrays - Neil
+3. OOPs concept in C#, Access Specifiers , Default access specifiers on different entities of C# - Harshith
+4. Inheritance and  Interface - Samrat
+5.Constructor, Destructor and Memory -Allocation/Deallocation in C#  Kevin
+6. Generic/Non Generic Collection and Exception Handling - Ghosh
+7.C# 2.0, C# 3.5 , C# 4.0 New Features - Komal
+8. LINQ and Lambda Expressions - HariPriya
+
+-------------------------------------------------------------------------------
+
+C# 3.5 New Features
+------------------------------
+
+they are supported from VS 2008 IDE onwards
+implicit variables
+extension methods
+anonymous types
+automatic property- defining property with get;set;
+property initializer-PersonInfo pi=new PersonInfo{Id=78,Name="Geeta",Age=45};
+collection initializer
+lambda expression
+linq queries
+
+Implicit Variables - variables are defined using var keyword instead of actual data type
+
+foreach(object t in al)
+{
+Console.WriteLine(t);
+}
+
+foreach(EmployeeInfo ei in emplist)
+{
+C.WL(ei);
+}
+
+the actual type can be replaced with
+foreach(var  ei in emplist)
+{
+C.WL(ei);
+}
+
+foreach(var t in al)
+{
+C.WL(ei);
+}
+
+var result=c.add(10,49);
+var obj=new EmployeeInfo();
+
+Rules
+1. Implicit types has to be declared and initialized
+2. They cannot be initialized to null
+3. They cannot be used as data member of class and method parameters
+4. They are used in foreach, storing result of a method, creating object, Linq and lambda queries
+
+2. Extension methods
+
+Team 1 
+Created a calculator Library
+Add()
+Sub()
+
+Team 2
+using the Calculator Library
+Add(), Sub() is used by Team2
+Mul() new requirement
+They will create Mul() function in a new project 
+They will not change calculator Library of Team 1
+But Mul() will behave as a part of Calculator library
+extending the existing class without modifying the source code is called extension methods
+
+Rules
+1. They are defined in a static class
+2. The extension method is also static
+3. They can take any parameters as per the method requirement
+eg: Mul(this CalculatorLibrary c,int x,int y)
+       {
+              return x*y;
+        }
+
+this - points to current instance of class
+
+Collection Initializer
+//old way
+List<EmployeeInfo> emplist=new List<EmployeeInfo>();
+emplist.Add(new EmployeeInfo(.......));
+
+Collection Initializer will add data to collection without using Add()
+List<EmployeeInfo> emplist=new List<EmployeeInfo>()
+{ 
+new EmployeeInfo{...........},
+new EmployeeInfo{............},
+new EmployeeInfo{............}
+};
+
+Anonymous Types
+used in LINQ and Lambda 
+class EmployeeInfo
+{
+datamembers
+constructor
+property 
+}  class StudentInfo{}    class BookInfo {}
+
+without a name
+without creating a class we define its property, intialize values and retreive the values
+new {} is used to define anonymous classes
+eg: var emp=new{EmpId=1,Name="Tom",Dept="IT",Desg="Manager",Salary=42343};
+C.WL(emp.EmpId);
+
+var book=new {ISBN=23424,Title="WebApplication",AuthorName="RK Narayan",Price=2323,PubName="sdvdsvf"};
+C.WL(book.ISBN, book.Title);
+
+To refer to other projects , 
+Add Reference - Browse - .Dll file of the other project(bin/debug) , select the .dll file
+
+.net 4.0 new features
+named and optional parameters
+dynamic variables 
+
+named parameter - allow to change the order of calling the parameter
+optional parameter- those parameters can be omitted from calling
+in optional parameter first specify all the required parameter and then define optional parameter and initialize it with default values
+
+dynamic age;
+age=18;
+age="Forty Nine";
+it will determine the datatype at runtime
+the values can be changed from one type to another type
+we use these dynamic variables in asp.net MVC
+intellisense will not be available
+
+
+var - declared and initalized
+  datatype is determined at complie time
+   it cannot be initialized to null
+
+C# features used in all versions 
+
+params
+a method can have invariable number of parameters
+Rule 
+A method can have only 1 param
+It should be defined as the last param
+
+
+StudentMarks(int regno, string name,int sem,double mk1,double mk2 ..................double mk6,double lab1,double lab2)
+
+StudentMarks(int regno, string name,int sem,params double[] marks)
+{
+}
+const
+readonly
+both allows fixed value
+
+const it allows the value to be initialized at the time of declaration
+readonly allows the value to be declared in constructor also
+
+checked /unchecked exception
+overflow exception cannot be handled by try catch block
+we use checked exception
+by default it is unchecked
+--------------------------------------------------------------------
+Assembly
+Every project in .NET is called as assembly
+Assembly has 2 things CIL Code and Manifest
+manifest is meta data about the project
+projectname
+project type
+version of .net it has used
+
+to see the contents of assembly - command line tool called ILDASM
+Intermediate language disassembler
+
+.net project complies into .exe or .dll
+These file are called PE files or Portable Executable files
+
+2 types of assembly
+
+private assembly- every project created by developer
+public assembly or GAC(Global Assembly cache)
+- project and library given by .net framework
+
+
+public assembly -till version 2.0  - c:\windows\assembly
+                             above 2.0 version- C:\Windows\Microsoft.NET\assembly\GAC_MSIL
+
+Debug code
+1. create a break point
+right click on function - breakpoint- insert breakpoint
+2. Execute code in debug mode - F5
+3. To go line by line press F11
+
+
+------------------------------------------------------------------------
+Tomorrow
+LINQ 
+ 
+Lambda 
+
+
+Monday, Tuesday and Thursday Sql Server
+
+
+
+
+
+
+
+
+
+

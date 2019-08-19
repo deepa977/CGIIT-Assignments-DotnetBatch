@@ -1,0 +1,141 @@
+ADO.NET
+ActiveX Data Objects .net
+It is used for .net application to interact with DB
+providers 
+Sql Provider - will connect to Sql Server 7.0 and above version
+OleDB Provider - can connect to any database
+Excel spreadsheet , MS Access, Sql Server < 7.0 
+Object Linking Embedding Database
+
+ODBC Provider - Open Database Connectivity
+This can interact with any old DB. used for VB6.0 Application to provide backward compatability
+
+Oracle Provider - connect to oracle DB 8i and above version
+------------------------------------------------------------------------
+
+namespaces 
+SQL Provider - System.data.SqlClient
+Oracle Provider - System.Data.Oracle
+OleDB Provider - System.Data.OleDB
+Odbc Provider - System.Data.Odbc
+and common namespace for all providers
+System.Data
+
+Exception related to DB - SQLException
+
+ADO.NET - 2 types of Architecture
+Connected Architecture
+Disconnected Architecture
+
+Connected Architecture - DB and .NET Application has a active connection thru out the DB Interaction
+
+Steps to connect to DB in Connected Architecture
+1. Establish the Connection - pass parameters like Server name, Database name, username, password to connect to DB
+SqlConnection     OleDBConnection OracleConnection 
+  OleConnection  - class
+2. Activate the connection
+   con.Open()
+3. Give the SqlQuery
+Class , Command 
+SqlCommand(query,con) OracleCommand OleDBCommand ODBCCommand
+4.Execute the Query
+DML  - insert update delete
+int res=com.ExecuteNonQuery()
+DQL  - select 
+1. Select multiple rows of data (more than one value)
+        select * from emp
+        select ename,sal from emp where empno=7390
+          ExecuteReader()
+return type of ExecuteReader is DataReader (ResultSet in Java)
+SqlDataReader , OleDBDataReader , ODBCDataReader , OracleDataReader
+DataReader works as readonly fwdonly direction
+
+2. Select which gives 1 result as output
+select max(sal) from emp
+select ename from emp where empno=7788
+
+object datatype=ExecuteScalar()
+
+5. Query needs to pass parameter value , we use SQLParameter
+
+6. Print the o/p of the results of the query
+7. close the connection
+con.close()
+
+----------------------------------------------------------------
+
+Layered Architecture
+try
+            {
+                
+            }
+            catch(SqlException sql)
+            {
+                throw sql;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+Controls used to display data from the Database
+These controls are called DataBinding Controls
+ListBox, ComboBox, DataGridView,CheckedListBox
+  thur - Disconnected Architecture
+Select with Parameter
+Update 
+Delete
+Call a Stored Proc from the C# Code
+
+Disconnected Architecture
+1. .NET Application connects to DB with the help of providers
+2. .NET application gives the "Select" query
+3. The data is fetched from DB and stored in Virtual Database called Dataset
+4. Dataset and the .net Application reside on same system
+5. Further manipulation of data is done to Dataset and not actual DB
+6.Once the interaction with the Dataset starts the .net application and Actual DB connection is closed
+7.It is called as Disconnected Architecture
+8.Data Manipulation like Insert, Update and Delete happens to Dataset and not Actual DB
+9.To update Dataset changes to DB - update()
+10 Dataset consist of many datatables
+11. Relationship can be established between Datatables using DataRelation
+12. Datatable itself has DataRows and DataColumns
+13. In Memory Dataset is stored as an XML File
+
+steps in disconnected architecture
+1. Establish connection with .net application and DB
+SqlConnection
+2.Give "Select " Query with Adapter class
+Adapter itself calls open(),executeReader(), close()
+No need to explicitly give these methods
+SqlDataAdapter , OracleDataAdapter, OleDBDataAdapter, ODBCDataAdapter
+3.create Dataset
+DataSet ds=new DataSet();
+4.Fill the o/p of select query to Dataset
+adp.Fill(ds,"TableName");
+5.update changes of Dataset to DB
+Update()
+
+
+--------------------------
+Connected Arch - more data manipulation like Insert,update, delete use connected Architecture
+
+Create a reporting application - use disconnected architecture
+select * from sales - Dataset
+where location
+Weekly or monthly sales report
+Salesman
+product
+
+Disconnected architecture we can bind data to Dataset using wizard
+We can do the same using Code
+
+
+
+
+

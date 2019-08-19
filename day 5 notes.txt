@@ -1,0 +1,223 @@
+.net 2.0 new features
+partial class
+static class
+generic class
+nullable types
+
+partial class
+class - properties, methods,constructor,data members,destructors
+problem of writing all code in a single class 
+- debugging will become difficult
+- code readability also is difficult
+
+splitting a single class across multiple files
+file1.cs                     file2.cs                       file3.cs
+partial class Emp  partial class Emp     
+
+{                                     {
+data members                 constructors
+                                        }
+}
+
+widely used in Windows Form Application ,
+WPF and Web Application
+---------------------------------------------------------
+
+static class 
+   1. static class cannot be inherited
+    2. object cannot be created for a static class
+3. Datamember  - static data member can be accessed inside a static method
+    Constructor - static constructor cannot take parameters
+They are public by default
+they will initialize static variables only once
+They are called first time when u invoke a property or method in a static constructor
+     methods - can access static variables
+
+all has to be static
+it will not allow non static entities
+
+call to invoke in static class
+Classname.MethodName
+classname.Propertyname
+
+
+Eg :In a web page you want to track the visitors count
+ TollGate Application u can track total toll amount collected , Total Vehicles passed
+
+In general if a variables has to be initialized once and keep holding the latest value then static is used
+----------------------------------------------
+Generic class
+
+swap(int a,int b)
+{
+int t=a;
+a=b;
+b=t;
+}
+
+swap(char c, char d)
+{
+char t=c;
+c=d;
+d=t;
+}
+
+Generic function
+class GenericClass<G>
+{
+swap(G a , G b)
+{
+G t=a;
+a=b;
+b=t;
+}
+}
+
+to resolve the data type for G, we have to create object
+GenericClass<int> obj=new GenericClass<int>();
+obj.swap(12,34);
+GenericClass<char> obj1=new GenericClass<char>();
+obj1.swap('K','L');
+
+
+class GenericTypes<T,G>
+{
+}
+GenericTypes<int, string> 
+c++ it is called as templates
+-----------------------------------------------------------------
+nullable types
+is used with DB concepts
+
+string name;
+int age;
+
+Insert into a table values of name and age
+default from C# will be
+name- null
+age=0
+
+But in DB 0 != null
+
+numerical data types are initialized to null in C# code
+int ? age=32;
+age=null;
+
+--------------
+
+Collections
+
+Arrays can store multiple data belonging to same data type but their size is fixed
+
+Collection can store data belonging to any type
+Collections are dynamic in size
+Collections can grow at runtime
+C# - Non Generic Collection
+1. All data is stored as Object Data type
+2.It has the overhead of Boxing and UnBoxing
+Primitive data type is converted from int to object - Boxing which is used while storing to collection
+
+  For  retreival of data - it converts object to primitive data type . It is called unboxing
+Shifting the data from heap to stack and stack to heap it has performance issues
+
+From .NET 2.0 - Generic Collection
+The data is stored in the type that is specified
+
+ICollection - methods used to append(), insert(), remove data to collection
+|
+IEnumerator - supports the use of loop to get data from collection
+|
+Non Generic                                           Generic
+Sytem.Collections                System.Collections.Generic
+  All are inbuilt class.
+ArrayList                               List<T>
+  They store data as a List of Items in sequential order like an array
+Stack                                     Stack<T>
+It retrieves data in the order of LIFO(Last In First Out)
+Add items to stack - push()
+Remove item from stack - pop()
+Get the top most item - peek()
+Queue                                    Queue<T>
+It retrieves item as FIFO (First in First Out)
+enqueue() - add item to queue
+dequeue() - remove from queue
+Hashtable                             Dictionary<TKey,TValue>
+Both stores data as key and value pair
+Eg : empid,name -
+         rollno,name
+         hallticketno,name
+empid - key - it takes unique values.If duplicates are entered for Key it throws an runtime exception
+
+
+ArrayList, HashTable, Dictionary ,List
+1. Add to the collection - Add()
+2. Remove from collection- Remove()
+3.Insert in between - Insert()
+4.to get all data - foreach
+5. to get specific data = index is used
+
+----------------
+Generic Collection Example
+
+List 
+
+Dictionary 
+
+Delegates and Events
+
+The concept of function pointer in C++ is called delegates in C#
+C# delegates works on subscription and broadcasting model
+Delegates are associated with events
+Events is used to broadcast different messages to delegates based on condition
+
+ATM - delegate which will broadcast the message given by events
+
+
+Events will check for conditions in all the below mentioned methods
+Insert card and enter PIN
+Validate Pin
+Withdraw - withdraw amount - Check Balance
+Deposit - Check Balance
+See Balance - Show Balance()
+
+Windows and Web Application are event driven
+Button_click event is handled by Delegates and Events
+
+Delegate is of 2 types
+SingleCast Delegate - 1:1 - Eg : ATM
+Multicast Delegate - 1:M - Eg : Ad messages for all Airtel Subscribers
+
+1. Create a delegate
+2. Create an event on a delegate
+3. Define methods
+4. check for condition in methods and make event broadcast the messages
+5. Delegate is called which prints the message to the user
+
+
+Tomorrow Topics 
+
+C# 3.5 New Features
+C# 4.0 New Features
+Params
+Assembly
+Checked/Unchecked Exception
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

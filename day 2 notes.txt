@@ -1,0 +1,159 @@
+Implementing OOPs Concepts in C#
+
+Object Oriented Programming
+
+Object - Any entity which has its own property is called an object
+pen
+book
+laptop
+computer
+projector
+marker 
+
+OOPs has 4 concepts
+Data Abstraction
+Encapsulation
+Inheritance 
+Polymorphism
+
+Data - Info 
+Abstraction - Extracting the necessary details
+
+
+Car - End User - milage , cost, make, color, design, no of seats, mechanism      
+Manufacturer-production cost, Material cost, material availability, transport, car sales, survey, customer satisfaction
+ShowRoom Person(Dealer) : Marketing, DealerShip Agreement, Bank Tieups,Existing customer, Service Dept, Prospective Customer, Show Room Employee Details, DriveTraining , Test Drive
+
+Encapsulation
+Hiding the information inside a class is called encapsulation
+
+
+Tablet     , capsule - It has a cover and medicine is inside the cover
+
+The Medicine itself is in Solid Form
+
+Cover of the capsule - Class
+Medicine in powder form - Variables, Methods, constructor,destructor,
+
+Access the contents of the class
+1. Create an object of class
+2. Access the contents as per the visibilty of access specifier
+
+An Instance of a class is called as an object
+class is a defined as a blue print of an object
+
+public - global access , It can be accessed from any project
+private - is having a class scope, Accessible within the class
+ 
+protected - accessible between the parent and child class
+internal - accessible by all classes which belongs to same name space
+
+
+
+class apple   
+                            fruits       class Beans        class Carrot
+class grapes
+                                                         vegetables
+public int price- All classes in Fruits and Vegetable namespace can access price
+class Apple - private int price - only class Apple can access price
+
+
+class OOTYApple               class KashmirApples
+
+                          Derived from Class Apple
+protected int price - class Apple
+Accessed in parent class Apple and child class OOTY Apple and KashmirApples
+
+
+internal int price - class Apple
+It is accessed by apple and grapes class as both belong to same namespace fruits
+
+Default access specifiers in C#
+class Classname    - internal
+Variables , Methods, constructor - private scope
+main(), destructors, interface implemented methods, static constructor -   public
+Events - Button_Click (GUI Programming) - protected 
+
+
+Initialize the variable
+1. Methods
+2.Constructor
+
+
+polymorphism 
+
+poly + morphism 
+Many Forms of the same method with different parameters is called Polymorphism
+
+Static Polymorphism 
+The method signature is resolved at compile time
+constructor overloading
+method overloading
+
+Dynamic Polymorphism
+The method signature is resolved at run time
+method overriding- is implemented thru the inheritance concept
+
+PersonInfo king=new PersonInfo();
+
+() - it is calling a default constructor
+
+Construtors are used to initialize the data members(variables) of a class
+Constructor is created by the CLR or developer
+If developer creates a constructor then CLR will not create a default Constructor
+
+Parameterized constructor     
+  There can be any number of parameterized constructor.Each one is differentiated by the number of parameters we pass, type of parameters passed and the order of the parameters
+
+Default Constructor
+There can be only one default constructor for a class
+Default constructor will not take any parameters
+developer can create a default constructor
+Default constructor will not be created by CLR if any form of constructor is written by developer
+
+
+How a constructor is created
+Constructor has same name as class
+No return Type
+Not even void
+
+How is constructor called
+When creating an object construtor is called
+
+
+
+Destructor calls the GC to destroy the objects of the current application
+GC.Collect()
+Destructor is called automatically and it is the last method to get invoked before program terminates
+
+How to create a destructor
+~ClassName()
+{}
+
+
+Method Overloading
+
+constructor - same name as class. No return type
+called when creating object
+Method - can have any name. has return type or return void
+It can be with parameters or without parameter
+method is called after creating object of class
+objname.methodname()
+
+overloading of method is based on parameter and not on return type
+
+---------------------------------------------------------
+Inheritance, Interfaces
+
+
+
+
+A project can have many class
+But 1 class only can contain the Main()
+
+create an object
+classname variablename=new classname();
+ to access methods of a class
+variblename.methodname()
+
+

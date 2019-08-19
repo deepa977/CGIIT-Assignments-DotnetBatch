@@ -1,0 +1,246 @@
+C# Basics - 7 Days 
+Sql Server - 3 Days
+---------------------------- Test 1 
+Windows Programming, ADO.NET and Entity Framework - 4 Days
+-----------------------------Test 2
+
+Project on Windows Forms and ADO.NET - 2Days
+------------Project Evaluation-----------------------
+
+Web Technology 
+XML 
+HTML and CSS
+Java Script - 3 Days
+
+ASP.NET - Web Application in C# - 4 Days
+----------------Test 3
+
+Project on ASP.NET and EF  ------------ 2 Days
+----------------Project Evaluation----------------------------------
+
+SOA Architecture
+Web Services  - 1 Day
+WCF - 2 Days
+
+ASP.NET MVC - 4 Days
+WEB API - 1 Day
+-----------------------Test 4
+------------------Final Project on MVC, SOA and EF ----------- 2 Days
+
+
+
+Java - Class name and filename has to be same if it has Main ()
+           In Java to use the library, import java.lang.*;
+           Package com.myexamples.package1     
+              {
+              class FirstExample
+              {
+                     methods()
+                     methods()
+              }
+            }
+
+FirstExample.java
+
+
+C# - to use library - using System;
+* is not supported in C# to import library
+ using System.Text;
+  
+namespace is logical grouping of classes
+File name and Class name can be different 
+ 
+
+The .exe of the compiled code is in /bin/debug folder 
+
+
+Workspace in Java is called solution in C#
+1 solution can have project of different types
+
+
+
+-----------------------------------------------------------------
+
+Datatypes supported in C#
+ Numeric Data types
+short   - System.Int16
+int   - System.Int32
+long - System.Int64
+float - System.Single
+double  - System.Double
+decimal - System.Float64
+byte  - System.Byte
+
+float f=3.14f;
+double pi=3.14;
+decimal pi=3.14M;
+
+byte - data should be in the range of 0 to 255
+-----------------------------------------------
+
+char based datatype
+
+char  - System.Char  - initialize only a single character (alpha numeric or special characters) - 'S'
+string - System.String - bunch of characters
+"Hello World";
+
+-----------------------------------------------------
+Others types
+
+
+DateTime - current Date and Time - DateTime.Now
+bool - System.Boolean - true/false
+TimeSpan - work on date and time and do manipulation on DateTime Datatype
+eg: Subtract between 2 dates
+       Add Days
+       Add Hours to Time
+
+-----------------------------------------------------------
+
+In C# any input is by default a string Data Type
+
+
+string has to converted to other types
+int.Parse("123")
+double.Parse
+DateTime.Parse
+decimal.Parse
+bool.Parse
+byte.Parse
+char.Parse
+
+-----------------------------------------------------------
+
+Input from the user 
+
+Console.ReadLine() 
+It takes any input as string datatype
+
+we have to use Parse function to convert string to different datatypes
+
+Parse() - will not handle format exception
+
+TryParse() - will handle format exception
+
+  Input is int.Parse("1234abc")
+  
+
+String.IsNullOrEmpty(name) || string.IsNullOrWhitespace(name) - validation of string input
+-------------------------------------------------------
+
+Arrays
+is used to store multiple values belonging to the same data type
+Arrays are static , Arrays cannot be resized
+
+Single Dimension Array
+Two Dimensional Array
+Jagged Array
+
+-------------------------------------------------------------
+
+Single Dimensional
+datatype []varname=new datatype[size];
+
+Two Dimensional Array
+datatype [,] varname=new datatype[r,c];
+
+Jagged Array
+The number of rows is fixed but element in each row is varying
+
+datatype[][]varname=new datatype[size of row][];
+
+Arrays uses loop to read & write values
+ for  it is used for both read and write operation
+
+foreach - only to read the values
+----------------------------------------------------------------
+
+Same in C, C++, Java , C#
+operators - 
+arithematic - + ,-,*,/,%
++ is used for concatenation
+logical operators - && (both condition should satisfy)
+|| (any one condition)
+! (negation of condition)
+relational operator > ,< ,>=,<=,!= , ==
+bit wise - >>>,<<<
+assignment operator - +=,-=,*=,/=,%=
+
+unary operator - ++ , --
+++ increment by 1
+var++  (post fix)
+++var ( pre fix)
+
+-- decrement by 1
+
+ternary operator  ? :
+c=a>b?a:b;
+
+checking conditions
+simple if-else
+nested if - else
+multiple if else or if else ladder
+{} - is optional
+it is required if multiple statements has to be executed for if block or  else block
+
+switch -- case
+C# - every case requires a break
+default - requires a break
+switch can evaluate for any datatype
+
+---------------------------------------------
+loops
+
+statements to repeat based on condition loops are used
+
+while
+do  - while
+for
+foreach()
+-----------------------------------------------
+
+
+Tomorrow pratice these programs
+Implementing OOPs concepts in C#
+
+----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

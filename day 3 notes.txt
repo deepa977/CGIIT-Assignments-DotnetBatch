@@ -1,0 +1,69 @@
+Dynamic Polymorphism - Method Overriding
+
+Inheritance
+Getting the property from parent class and using them in child class is called inheritance
+Adv : Reuability of Data
+C# supports Single Inheritance, Multilevel Inheritance
+Oneparent class - inherits - one or more child classes
+Accouts - Parents
+  |
+  |
+Savings Account    CurrentAccount    FixedDepositAccout
+
+Multilevel Inheritance 
+
+Child class becomes parent to another child class
+Vehicle
+|
+Car
+|
+Maruti
+|
+Alto
+|
+Alto K10
+
+keywords used in C# Inheritance
+1. virtual and override
+2. abstract and override
+3.sealed
+4.new
+5.base
+
+virtual and override
+If parent class method has a function body it is defined as virtual
+Same method is used in child class with a different function body it is defined as override
+
+PersonInfo - id,name,email,address,gender,mobno,age
+Student - rollno, course,branch, sem, aggrmarks, grade
+Employee- empid,salary,dept,desg, exp
+
+In inheritance concept the child class will by default call the default constructor of parent class
+
+To call a parameterized constructor in inheritance it is called as constructor chaining
+child class will call the parent class parameterized constructor
+
+
+If parent class method does not have a fixed function body to define , mark the method as abstract
+If a method is abstract , class also should be defined abstract
+Object cannot be created for an abstract class
+abstract methods has to be override in derived  class
+
+
+Both Abstract and Virtual function in base class is used with override keyword in child class
+
+
+sealed : it is used to prevent a class from inheritance
+new - to prevent a method from override
+
+
+
+
+
+
+
+
+
+
+
+

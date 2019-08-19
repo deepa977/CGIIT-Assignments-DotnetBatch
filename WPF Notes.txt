@@ -1,0 +1,122 @@
+WPF - Windows Presentation Foundation
+It is used to create Desktop application in C#
+Windows fOrm - WPF (both are used to create Desktop based GUI application in C#)
+
+Windows Form 
+Form1.cs(Design) - Drag and Drop the Controls
+Form1.cs - Write code for Events
+Form1.designer.cs - InitializeComponent() in which all controls are initialized
+Form1.resx - Resource file for images, different language settings
+Program.cs - Main() - Startup form will be called
+
+
+WPF
+It generates 2 files
+Window1.xaml (Xammel)
+Extensible Application Markup Language
+For every control used in WPF it will intialize in tag format <button name="btn1" Text="Submit" OnClick="Button1_Click">
+XAML file follows XML Well Formness rules
+Syntax
+Window1.xaml.cs - writing the events
+App.xaml -attribute  startupuri="Window1.xaml"  in which the startup window is initalized
+WPF controls and Windows Form Controls are same
+
+New in WPF
+1.Additional Controls like TextBlock, Rectangle,Elipse have been introduced
+2. WPF supports 5 layouts to describe the arrangement of controls
+Grid - Default (rows/cols)
+Dock Panel - 5 controls can be placed (Top, Bottom,Left, Right, Middle)
+Canvas - Geometric controls can be defined inside canvas
+2D Graphics
+Animations
+Paint and brush to fill colors
+Video Control
+Wrap Panel - it places controls in sequence one after another
+Last control will hit the border it automatically wraps to next line
+Stack Panel - stack controls one top of another
+
+3.Brushes and Filling of Color
+SolidColorBrush - fill the component/control with one solid color
+LinearGradientBrush - fill the component/control with multiple color based on  the offset value
+offset - % of color it has fill
+0 to 1 is the value that can be given for offset
+brush has a start point and end point- blending the colors between the start and end point and fill the component
+RadialGradientBrush - it blends the colors and fills in circular pattern
+DrawingBrush - drawing objects like GeometryDrawing, ImageDrawing , VideoDrawing
+
+ImageBrush- fills with images
+VisualBrush-Combine images and text
+Different Tile Types or pattern to fill a control
+Horizontal Lines or Vertical Lines or curved lines
+
+4. Databinding supports 2 types 
+Winform DataBinding is used to bind data to controls from Dataset or List<>
+WPF Databinding can be done between controls
+Can be done between property and control
+Can be done between Database data and control
+
+Binding Mode
+One Way - datasource  to control
+Datasource data will not get updated
+
+Two Way (default)
+DataSource to Control or Control to DataSource
+Data gets updated in DataSource
+
+One Way to Source
+Control to DataSource
+
+Binding - Which Property Data Has to be Binded
+ElementName - from which control data is binded
+Path- property of control gives the data
+Mode - OneWay, TwoWay or OneWayToSource
+
+Winforms to Bind Data
+
+Datagridview1.DataSource=ds.Tables[0];
+
+WPF 
+DataContext
+
+
+
+Static Binding and Dynamic Binding of Data
+Static Binding is determined at Compile Time
+Dynamic Binding is determined at RunTime
+
+5. Styles - StaticResouce 
+It is similar to CSS
+Font , Background Color , ForeGround Color
+Windows Level Style or APP Level Styles can be defined
+Windows Level <Windows.Resource>
+Application Level - App.Xaml  <App.Resource>
+
+
+
+triggers - invoked on an event
+Dynamic Binding
+DynamicResource
+
+6. Animations
+Movement or changing width, height, opacity or changing the position
+all r associated with Animation
+DoubleAnimation is used to initialize the Animation 
+Property like From, To, Duration, RepeatBehaviour has to be set
+Different types of Transform is RotateTransform
+SkewTransform
+is used
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

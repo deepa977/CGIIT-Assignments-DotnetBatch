@@ -1,0 +1,90 @@
+XML , XSD and DTD
+
+Extensible Markup Language
+markup langauge - it is specified in Tags
+The tags are user defined not inbuilt
+It is not inbuilt like HTML(w3c) Tags
+
+
+HTML - Design the web pages
+XML - to transfer data across different languages
+XML is a universal langauge and all applications can read data which is in XML
+
+
+XML follows a structure to create a XML Document
+XML Structure is called as Well Formness Rules
+
+<?xml version="1.0" encoding=""?>
+1.This is called as proluge
+2.Every XMl document should have one Root Tag
+<Employee_Details>
+Tags in XML there should not be space or any spl characters in the tag name
+It can have hypen or underscore
+
+3. Every opening tag should have a closing tag
+4. XML tags are case sensitive
+5. Attribute values has to be in quotes ""
+----------------------------------------------------------------------------
+XML can have Elements or attributes
+When to define Elements
+<Address>
+  <HouseNo>
+   <StreetNo>
+<landmark>
+<area>
+<pincode>
+----------------------------
+Attribute 
+EmpID or RegNo or PanNo or Gender
+
+XML has a parser inbuilt in browser which can check only well formness rules
+The xml files are saved with .xml extension
+
+To data validation XML has 2 supporting documents
+DTD 
+Document Type Definition
+XSD
+Extensible Schema Definition
+
+---------------------------------
+DTD can validate only the order of tags in XML Document
+It does not support primitive data types (int , char , string)
+Elements data is referred as #PCDATA (parsed character Data)
+Attributes Data is referred as CDATA (Character Data)
+
+DTD can be created as External DTD and Internal DTD
+occurance of the tag. How many times the tags can be repeated
+
++ minimum 1 occurance (default)
+*  0 or more occurance
+? 0 or 1 occurance
+
+Drawbacks of DTD
+1. It does not support primitive data types to validate data
+2. It does not follow XML Syntax. Developer has to learn a new syntax to work on DTD
+
+XSD 
+It validates data based on primitive data type
+XSD validates the structure(order of tags) as well as data
+XSD Tags are inbuilt
+It is defined in the namespace http://www.w3.org/2001/XMLSchema
+It follows XML Syntax
+Root Tag name is <Schema>
+<ComplexType> - defines the sequence of tags
+<SimpleType> - define the data for the tags
+
+XSD is preferred compared to DTD
+
+XML can validate either DTD or XSD
+Both it cannot validate in a single XML file
+
+Reuse XSD in multiple XML Files
+
+Reference the XML Schema in XML File
+Namespace is "http://www.w3.org/2001/XMLSchema-instance"
+
+-----------------------------------------------
+
+
+
+

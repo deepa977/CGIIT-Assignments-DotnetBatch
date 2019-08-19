@@ -1,0 +1,82 @@
+JavaScript
+is a weakly typed scripting language used to validate the html pages
+It is weakly typed because it does not support any primitive data type
+1. Any variable is declared using var type
+2. It takes the syntax of Java . 
+3.Java Script supports Input of values,printing output values, array, operators, DateTime,If else , switch case, loops like while, do-while and for
+4. DOM Manipulation - How to access HTML Form Elements in Java Script
+5.User defined functions are created to call on Click Event
+6.Offline Storage feature of HTML 5
+7. Draw geometric shapes on the Canvas
+
+Java Script can be an external file with .js extension
+It can referred inside the HTML Page
+
+We can declare Javascript code within HTML either in <head> or <body>
+
+refer or write a java script code
+<script type="text/javascript" src="filename.js">
+
+</script>
+1. var age=90;
+     var name='Martin';
+    var email="martin@gmail.com";
+
+2. var d=new Date();
+print the o/p of d it will have the current date and time
+
+3.take input from user 
+var name=prompt("Enter Name");
+any i/p using prompt will be taken as string
+convert to number datatype
+parseInt() and parseFloat()
+
+4. Display the o/p
+alert() -- will show as a popup windows
+document.write() - write the o/p on the browser
+
+5. Arrays in Javascript can be homogenous or hetrogeneous array
+var homo=[12,13,14,15,16,17,18,19,20];
+var hetro=[1,'martin',67,"Male","martin@gmail.com",true];
+
+foreach loop syntax is specified as
+for(var t : homo)
+   d.w(t);
+============================================
+
+Document Object Model
+getElementByID
+getElementsByName
+are used to refer an HTML Form element in Javascript
+
+functions in javascript can be with parameter, without parameter and with return value
+functions are called on the events of HTML Controls
+
+Local Storage - persist the data till browsing history is cleared
+Session Storage - Data is lost once the browser window is closed
+
+setItem("Key","Value")- storing
+getItem("Key") - retreival
+
+if(typeof(Storage) != 'undefined')
+{
+localStorage.setItem("Name","Value");
+}
+
+localStorage.getItem("Name");
+replace localStorage with sessionStorage
+
+
+canvas is a new html 5 element which can draw any geometric shapes using javascript
+
+Monday C#.NET
+
+Test- SQl server, html,css and javascript
+tuesday evening 4pm
+
+
+
+
+
+
+

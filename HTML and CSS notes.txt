@@ -1,0 +1,245 @@
+HTML and CSS
+HTML -  hyper text markup langauage
+It is used for designing static web pages
+HTML cannot do any validation
+To make the web pages interactive and dynamic we use Javascript
+Markup Language - the entire html is represented as <>.
+<> tags . are called as markups
+
+HTML belongs to w3c - world wide web consoritum (group of companies has joined together to define HTML Standard)
+HTML - 4.0(is supported by old and new browser) and 5.0(latest version supported in lasted browser).
+
+Web Pages are executed on the browser
+Every browser has a s/w called parser which is used to interpret the HTML tags and give the O/p(render the page on the browser)
+
+HTML 4.0 structure
+<html>
+<head><title>First Web Page</title></head>
+<body>
+     Design the Web Page Content
+</body>
+</html>
+these files can be saved with .html or .htm extension
+HTML tags are not case sensitive
+
+They can be written in upper case, lower case or mixed case
+<HTML></html> -- valid
+comments in html <!--   comment -->
+Editors to create HTML are notepad++, editplus,eclipse, visual studio IDE, Sublime Text 3, Textpad 
+
+---------------------------------------------
+text formatting tags
+<b></b> - text in bold
+<i></i> - text in italics
+<u></u> - text as underline
+<b><i><u>  Text </u></i></b>
+
+Levels of defining the heading
+<h1>--- <h6>
+<h1> - biggest of font size
+<h6> - smallest of font size
+
+Container tags
+<p> - paragraph
+<div> - division
+<span>- place holder
+
+different ways to display data
+ordered list <ol type="A","a","1","i"(small letter roman numbers),I(upper case roman number)>
+<li>Data</li>
+<li> Data </li>
+</ol>
+unordered list <ul> - display every item as bullets
+<li> Data </li>
+<li> Data</li>
+</ul>
+
+Ordered List and Unordered List can be nested
+
+tabular format- <table>
+<tr> - create a new row
+<th> - create a table heading (column name)
+<td> - table data ( data for each cell)
+ it will not match the number of rows and columns
+draw a horizontal line - <hr/>. they will not have any data
+new line <br/>
+--------------------------------------
+
+images  -- add images to the web page
+<img src="filename.jpg/gif/png" width="100" height="100">
+
+hyperlinks
+is used to navigate from one web page to another
+<a> anchor 
+<a href="filename"> NAVIGATION tEXT</a>
+
+new features of HTML5
+ HTML 4 was browser independent 
+and some tags were broswer specific also
+<marquee> - netscape
+<blink> - IE
+They were not device specific
+
+HTML 5 providers
+Device independent Browser
+new tags like 
+<canvas> - draw geometric objects.it requires java script to define coordinates
+Semantic Tags / Non Semantic Tags
+<div> - divide 
+<p> - paragraph
+
+New Semantic Tags 
+<article>
+<header>
+<footer>
+<nav>
+if style is applied to a semantic tag then it will inturn reflect the styles to the contents of the semantic tags
+Same look and feel of web pages across the devices
+
+Non Semantic = <b>
+Enhanced version of list tags
+<dt> - decription text
+<dd> - decription data
+
+<video>
+<audio> these 2 new tags will display media player control on the browser and we can view videos and hear to audio files
+
+Offline Storage - storing user details like username and password was done with the help of cookies
+Cookies is supported by web programming languages like asp.net, servlets, jsp,php,python
+
+HTML 5 - Local Storage and Session Storage for storing offline data with the help of Javascript
+Local Storage will retain the data for ever
+Session Storage will retain data till the browser window is open and in use.
+Once the broswer window is closed the session storage content is deleted
+
+Create Form in HTML4 / HTML 5
+Html4 controls input is  validated using Java script
+    html5 new controls are inbulit with javascript validation
+
+html4 
+<html>
+<head><title>
+<body>
+<form> to define form controls
+TextField - Single Line of Input from User
+<input type="text">
+TextArea - multiline input
+<textarea rows="10" cols="10">
+password input -characters entered is either * or .
+<input type="password">
+Single Selection from list of choices
+<input type="radio" name="gender">Male - radiobutton
+<input type="radio" name="gender">Female
+name attribute with the same value is used to group radiobuttons so that only one value is selected.
+
+Toggle Control
+checked / unchecked
+<input type="checkbox">
+To select one item from a list
+<select>
+<option>Item1</option>
+<option>Item2</option>
+<option>Item3</option>
+</select>
+To select multiple items from a list
+<select multiple="multiple">
+<option>Item1</option>
+<option>Item2</option>
+<option>Item3</option>
+</select>
+
+upload a file
+<input type="file"/>
+
+submit the data entered for processing
+<input type="submit"/>
+to reset all data on the form
+<input type="reset">
+Different click operations to be performed on the form
+<input type="button"> 
+HTML5 
+<button>Click</button>
+
+HTML5 new Form Controls
+<input type="color"/> - load a color palette and allow choose a color from it
+<input type="date"/> - load a calendar control and we can choose date from the calendar
+<input type="datetime-local"/>
+display calendar + enter time and set AM/PM
+<input type="month"> - allow user to enter month, year
+Eg: 5,2002 calendar of may 2002 will pop up
+<input type="week"> - 27,1999 - it will show a calendar control highlighting the dates of 27th week in year 1999
+<input type="number" min="1" max="10">
+<input type="email"/>
+<input type="url">
+<input type="range" min="98.4" max="110">
+<input type="tel">
+<input type="search">
+-------------------------------------------------------------------------------
+
+video
+audio
+dl,dt,dd
+Semantic tags
+------------------------------
+
+CSS - cascading style sheet
+It used to apply styles for html tags
+
+border 
+background color
+foreground color
+align
+text family
+font size
+text transform
+text shadow
+box shadow
+output in multi columns like a newspaper
+
+Internal Stylesheet - it is defined in .html file within the <head> tag
+<style type="text/css">
+Defines styles for the html tag
+</style>
+External Stylesheet
+Defined as a seperate .css file
+Referred inside any html page
+<link rel="stylesheet" href="filename.css"/>
+
+Inline Stylesheet
+It is defined as part of html tag itself using the style="define style"
+syntax of defining the stylesheet
+tag
+{
+style1:value;
+style2:value;
+style3:value;
+}
+
+css comment is /*....*/
+
+Tomorrow - Javascript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,252 @@
+interface
+
+inheritance - Is A relationship between related classes
+
+Sports (Parent Class)- Cricket is a type of sports
+                                         Hockey is a type of sports
+
+Accounts - Savings Account is a type of accounts
+                      Fixed Deposit is a type of account
+is achieved between related classes.
+Parent class can be a normal class or abstract class
+
+                        Has a relationship
+Unrelated classes enter into a  contract with interface then it is has a relationship
+
+IFlying - fly();
+
+class Bird :IFlying
+{
+    public void fly()
+{
+}
+
+}    class Plane     Class Kite    class Spiderman
+
+
+abstract class                             
+1. define data members
+2.It can have virtual methods 
+and abstract methods
+3.Abstract class defines Is A Relationship
+4.Child class can inherit from only one 
+abstract class
+5.abstract methods has to be override in
+child classes
+
+interface
+1. Interface will have only prototype of methods
+2. The methods are public by default, so no access specifer is defined
+3.No keywords like abstract, virtual or override is used for interface methods
+4.Unrelated classes enter into contract with interface to access the interface methods
+5.Interface cannot define data members
+6.A class can implement more than one interface
+
+----------------------------------------
+
+create a interface called IInterest
+It has a method called CalculateInterest accepting 3 parameters principal, rateofinterest and years
+
+Create 2 class 
+1. SimpleInterest
+2. CompoundInterest
+
+Both classes should implement the IInterest Interface
+ formula SI - ptr/100
+  formula CI - p*(1+R/100) ^Years  
+
+Math.Pow() use it to raise to power of years
+
+Properties in C#
+
+Data members of a class can be initialized in 3 ways
+1 . Functions
+2. Constructors
+3. properties
+
+They are get and set blocks used to initialize and retrieve data members of a class
+
+get - retreive the values
+set - initialize the values
+
+CLR property supported by all versions of .net framework
+
+Automatic Property supported from .net 3.5 and above versions
+
+Both works the same way. They follow 2 different syntax
+
+property
+1. Property is identified by a name
+2. we cannot pass parameters to property
+3. It cannot return void
+4. return type of property is based on the variable that is intitialized 
+5. get{} and set{}
+get - return a value
+set - initialize the value. 
+Initialize the value at runtime - set{ variablename=value;}
+
+Method
+1. methods can pass parameters
+2.methods can return void
+3. method has a function body (logic)
+No get or set block
+
+CLR property can be defined in 3 ways
+1. readonly will have only get{}
+2. writeonly will have only set{}
+3. read write property - will have both get{} and set{}
+
+1.property can be called by creating object of class
+2. .net 3.5 onwards , new feature called property initializer
+
+
+
+Exception Handling
+   Errors - Compile Time Error - Syntax error, It has to be rectified for program to compile
+Runtime error - Logical error. There is no syntax error but program logic will not work
+eg:
+int a,b,c;
+a=10;
+b=0;
+c=0;
+c=a/b;
+Console.WriteLine(c);  ..logical error of DivideByZero
+
+int []arr=new arr[3];
+arr[7]=49; .. IndexOutOfBoundsException
+
+Exception Handling is used to handle runtime errors
+if runtime errors are not handled in the program it is called uncaught/unhandled  exceptions and it is handled by CLR. Uncaught or Unhandled exception is bad programming practice
+
+
+To catch the runtime errors C# has 
+try {
+give your code
+1. code executes 
+2. No error - get Output
+3. Syntax error - program will not compile
+4. Runtime error - it will be handled
+
+} catch()  - catch the runtime errors
+
+All runtime errors are handled by the parent class called Exception
+        Exception - generalized exception class.It can handle any type of exception
+            |
+           DivideByZeroException  MainNotDefinedException
+IndexOutofBoundsException
+SQLException - Database
+IOException   --- derived classes are called specialized exception
+
+try {} catch(DivideByZeroException de)   {}  catch(NullReferenceException ne) {}  catch(Exception ex){}
+
+Multiple catch - order of catch should be specialized to generalized
+
+try - execute the code . If there is logical error , control comes to catch , display the error message and program will terminate
+
+finally {} - finally execute whether an exception occurs or not
+finally is the last block to execute before program terminates
+finally block to do clean up operation
+eg: GC.Collect()
+       dbcon.Close()
+        fileread.close()
+
+if try has multiple statements of code and all r having exception only the first statement is handled
+
+try{} catch() and finally{} should be given inside a method
+
+throw - it is used to check an exception based on condition
+create user defined exception and how to handle it
+
+user defined exception class will inherit from the Exception class
+So that all the property and methods can be override
+
+if throw is used in a method , then it has to be called inside try because the thrown exception is handled by catch block and catch cannot work without try
+
+-------------------------------------------------------------------------------
+ topics for thursday
+
+C# 2.0 New Features- 18/7
+Collections 
+Delegates and Events
+
+Friday - 19/7
+Assembly
+C# 3.5 New Features
+read only , const, boxing, unboxing , params, ref , out
+
+Saturday - 20/7
+LINQ
+Lambda 
+
+Monday - 22/7
+Sql Server
+
+Tue - 23/7
+Sql Server
+
+Thur - 25/7
+Sql Server
+
+Fri - 26/7
+HTML /CSS
+
+Sat - 27/7
+XML 
+
+Mon - 29/7
+Java Script
+
+Tues - 30/7
+Win Form
+
+Thur - 1/8
+ADO.NET
+
+Fri - 2/8
+ADO.NET
+
+Sat 3/8 
+EF
+
+Mon 5/8 
+WPF
+
+Tue 6/8
+Project day 1
+
+Thur 8/8
+Project day 2
+
+Fri 9/8
+ASP.NET Day 1
+
+Sat 10/8
+ASP.NET Day 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

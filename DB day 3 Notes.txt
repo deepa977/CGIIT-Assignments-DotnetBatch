@@ -1,0 +1,104 @@
+Index 
+is used for retreival of data faster in a table
+3 types of Index
+Clustered Index  - is created on Primary Key column when primary key is created
+There can be only one clustered index in a table
+The sorting is done on the asc order of primary key values
+
+Non Clustered Index - there can be upto 899 non clustered index created on a table
+it can be created on any single or multiple columns
+select ename from emp where ename like 'S%'
+ENAME
+Scott  -checks - Pick
+Martin-No
+Mythili-No
+Bindu-No
+Sindhu-Yes
+Priya
+Sonia
+Jack
+Jim
+Andrew
+Andy
+Sam
+
+select ename from emp where ename like 'S%'
+create index ind_Emp_Ename on Emp(Ename)
+Andrew
+Andy
+Bindu-No
+Martin-No
+Mythili-No
+Jack
+Jim
+Priya
+Scott  -
+Sindhu
+Sonia
+Sam
+
+if we create multiple column index
+create index ind_Emp_Ename_Job on Emp(Ename,JOB)
+
+create index ind_Emp_Ename_Job_Sal on Emp(Ename,JOB,Sal)
+
+
+select ename from emp where ename like 'S%'
+
+Unique Non Clustered Index
+
+This index is created on Unique Contrainst Column
+-----------------------------------------------------------------------------
+
+drop index indname
+-----------------------------------------------------
+
+sub queries
+get empname earning max salary
+
+select ename from emp where sal=max(sal)
+
+But Aggr functions cannot be given directly in where clause
+Subquery are created
+Outer Query(Inner Query)
+The Output of Inner Query becomes an input to the Where clause of Outer Query
+-------------------
+Views
+views are temporary tables created from single or multiple base tables
+they dont have their own structure
+and they dont occupy extra memory space
+
+Views are created so that complex query becomes easy to query every time you invoke it
+ views are updatable
+if the data is altered from view then the data in the base table also gets altered
+
+views have to be updated based on condition then we use 'With Check Option'
+we cannot insert or update the values to new value other than what was specified in the condition
+
+Stored Procedure
+-------------------------------
+
+SP are like functions in C# which returns Void
+Queries are written every time and executed
+SP is an entity which will remain for ever in the DB
+
+SP is called from C# application using ADO.NET
+
+with parameter or without parameter
+Parameter passed in Sql Server
+syntax 
+@paramname datatype
+
+parameters are of 2 types
+input parameter and output parameter
+input parameter is for passing input values
+The SP is returning a value is specified in output parameter
+
+
+
+
+
+
+
+
+

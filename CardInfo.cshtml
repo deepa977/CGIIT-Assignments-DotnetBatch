@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ShoppingCartMVCProject.Models.ShoppingCartList>
+@{
+    ViewBag.Title = "CardInfo";
+}
+
+<h2>Items Ordered</h2>
+
+<table border="1">
+    <tr>
+        <th>Product ID</th>
+        <th>Quantity</th>
+        <th>Total Amount</th>
+    </tr>
+    @foreach(var m in Model)
+    {
+        <tr>
+            <td>@m.PID</td>
+            <td>@m.Qty</td>
+            <td>@m.TotAmt</td>
+        </tr>
+    }
+
+    
+</table>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    {
+
+<table border="3">
+    <tr>
+        <td>Amount Payable</td>
+        <td>@Convert.ToDecimal(Session["finalamt"])</td>
+    </tr>
+    
+</table>
+    }
+}
